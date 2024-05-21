@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary
-        image: ckad:canary
+        image: localhost/ckad:canary
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
