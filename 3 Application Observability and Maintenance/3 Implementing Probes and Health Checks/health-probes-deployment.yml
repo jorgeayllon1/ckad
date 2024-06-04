@@ -21,4 +21,16 @@ spec:
       - image: health-probes:v1
         name: health-probes
         resources: {}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          periodSeconds: 5
 status: {}
